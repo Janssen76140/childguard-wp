@@ -1,0 +1,1 @@
+<?php /* Template Name: Tableau de bord */
