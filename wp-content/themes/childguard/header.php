@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChildGuard</title>
     <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap" rel="stylesheet">
 
 
     <?php wp_head(); ?>
@@ -24,8 +25,8 @@
                     <img class="logo-header" src="<?php echo get_template_directory_uri(); ?>/asset/img/logo.svg" alt="Logo">
                 </a>
                 <ul>
-                    <li><a href="<?php echo esc_url(home_url($web['pages']['Inscription']['slug'])); ?>" title="">Connexion</a></li>
-                    <li><a class="lien-inscription" href="<?php echo esc_url(home_url($web['pages']['Connexion']['slug'])); ?>" title="">S'inscrire</a></li>
+                    <li><a href="<?php echo esc_url(home_url($web['pages']['Connexion']['slug'])); ?>" title="">Connexion</a></li>
+                    <li><a class="lien-inscription" href="<?php echo esc_url(home_url($web['pages']['Inscription']['slug'])); ?>" title="">S'inscrire</a></li>
 
                     <!-- <?php if (is_user_logged_in()) { ?>
                         <li class="active"><a href="<?php echo esc_url(home_url('/')) ?>" title="">Accueil</a></li>
