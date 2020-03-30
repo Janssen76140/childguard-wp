@@ -1,1 +1,5 @@
-<?php /* Template Name: Connexion */
+<?php /* Template Name: connexion */
+
+?>
+
+<h2>salut</h2>

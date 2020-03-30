@@ -1,1 +1,1 @@
-<?php /* Template Name: Tableau de bord */
+<?php /* Template Name: tableau de bord */

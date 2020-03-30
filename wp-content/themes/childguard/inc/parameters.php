@@ -2,27 +2,27 @@
 global $web;
 $web = array(
     'pages' => array(
-        'Home' => array(
+        'home' => array(
             'id' => 6,
             'slug'  => '/',
         ),
-        'Tableau de bord' => array(
+        'tableau de bord' => array(
             'id' => 10,
             'slug'  => 'tableau-de-bord',
         ),
-        'Facture' => array(
+        'facture' => array(
             'id' => 12,
             'slug'  => 'facture',
         ),
-        'Inscription' => array(
+        'inscription' => array(
             'id' => 16,
             'slug'  => 'inscription',
         ),
-        'Connexion' => array(
+        'connexion' => array(
             'id' => 18,
             'slug'  => 'connexion',
         ),
-        'Contact' => array(
+        'contact' => array(
             'id' => 14,
             'slug'  => 'contact',
         ),

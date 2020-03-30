@@ -1,4 +1,4 @@
-<?php /* Template Name: Home */
+<?php /* Template Name: home */
 
 get_header(); ?>
 
@@ -30,7 +30,7 @@ get_header(); ?>
             <h3>Les enfants arrivent</h3>
         </div>
         <div class="bouttonInscrivezVous">
-        <a href="<?php echo esc_url(home_url($web['pages']['Inscription']['slug'])); ?>">Inscrivez-vous</a>
+        <a href="<?php echo esc_url(home_url($web['pages']['inscription']['slug'])); ?>">Inscrivez-vous</a>
         </div>
     </section>
 </div>

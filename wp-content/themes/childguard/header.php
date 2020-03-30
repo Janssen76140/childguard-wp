@@ -26,13 +26,13 @@
                 </a>
                 <ul>
                     <li><a href="<?php echo esc_url(home_url($web['pages']['Connexion']['slug'])); ?>" title="">Connexion</a></li>
-                    <li><a class="lien-inscription" href="<?php echo esc_url(home_url($web['pages']['Inscription']['slug'])); ?>" title="">S'inscrire</a></li>
+                    <li><a class="lien-inscription" href="<?php echo esc_url(home_url($web['pages']['inscription']['slug'])); ?>" title="">S'inscrire</a></li>
 
                     <!-- <?php if (is_user_logged_in()) { ?>
                         <li class="active"><a href="<?php echo esc_url(home_url('/')) ?>" title="">Accueil</a></li>
-                        <li><a href="<?php echo esc_url(home_url($web['pages']['Tableau de bord']['slug'])); ?>" title="">Tableau de bord</a></li>
-                        <li><a href="<?php echo esc_url(home_url($web['pages']['Facture']['slug'])); ?>" title="">Facture</a></li>
-                        <li><a href="<?php echo esc_url(home_url($web['pages']['Contact']['slug'])); ?>" title="">Contact</a></li>
+                        <li><a href="<?php echo esc_url(home_url($web['pages']['tableau de bord']['slug'])); ?>" title="">Tableau de bord</a></li>
+                        <li><a href="<?php echo esc_url(home_url($web['pages']['facture']['slug'])); ?>" title="">Facture</a></li>
+                        <li><a href="<?php echo esc_url(home_url($web['pages']['contact']['slug'])); ?>" title="">Contact</a></li>
                     <?php } ?> -->
 
                 </ul>
