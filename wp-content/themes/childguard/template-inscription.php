@@ -69,7 +69,7 @@ get_header(); ?>
 
 <h2>Inscription</h2>
 <?php if ($success) { ?>
-    <h2 class="success">Merci. Nous revenons vers vous dans les plus brefs délais.</h2>
+    <h2 class="success">Merci. Vous pouvez vous connecter.</h2>
 <?php } else { ?>
 
     <div class="wrap">

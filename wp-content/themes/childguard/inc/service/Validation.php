@@ -14,12 +14,6 @@ class Validation
         return true;
     }
 
-    /**
-     * emailValid
-     * @param email $email
-     * @return string $error
-     */
-
     public function emailValid($email)
     {
         $error = '';
@@ -31,19 +25,9 @@ class Validation
         return $error;
     }
 
-    /**
-     * textValid
-     * @param POST $text string
-     * @param title $title string
-     * @param min $min int
-     * @param max $max int
-     * @param empty $empty bool
-     * @return string $error
-     */
 
-    public function textValid($text, $title, $min = 3,  $max = 50, $empty = true)
+    public function textValid($text, $title, $min = 3,  $max = 50)
     {
-
         $error = '';
         if (!empty($text)) {
             $strtext = strlen($text);
@@ -53,12 +37,12 @@ class Validation
                 $error = 'Votre ' . $title . ' est trop court.';
             }
         } else {
-                $error = 'Veuillez renseigner ' . $title . '.';
+            $error = 'Veuillez renseigner ' . $title . '.';
         }
         return $error;
     }
 
-    public function validMdp($password1, $password2, $empty = true)
+    public function validMdp($password1, $password2)
     {
         $error = '';
         if (!empty($password1)) {
@@ -68,46 +52,49 @@ class Validation
                 $error = 'Le mot de passe doit contenir minimum 6 caractères';
             }
         } else {
-                $error = 'Veuillez renseigner un mot de passe';
+            $error = 'Veuillez renseigner un mot de passe';
         }
         return $error;
     }
 
-    public function validSiret($siret, $empty = true)
+    public function validSiret($siret)
     {
+        $error = '';
         if (!empty($siret)) {
-            if (strlen($siret) !=14) {
+            if (strlen($siret) != 14) {
                 $error = 'le SIRET doit contenir 14 caractères';
-            } if (!is_numeric($siret)) {
+            }
+            if (!is_numeric($siret)) {
                 $error = 'le SIRET ne doit contenir que des chiffres';
-            } 
+            }
         } else {
-                $error = 'Veuillez renseigner un numéro de SIRET';
-            
+            $error = 'Veuillez renseigner un numéro de SIRET';
         }
         return $error;
     }
 
-    public function codePostalValid ($codepostal, $empty = true)
+    public function codePostalValid($codepostal)
     {
+        $error = '';
         if (!empty($codepostal)) {
-            if ((!is_numeric($codepostal)) OR (strlen($codepostal)!=5)) {
+            if ((!is_numeric($codepostal)) or (strlen($codepostal) != 5)) {
                 $error = 'le code postal n\'est pas correct';
             }
         } else {
-                $error = 'Veuillez renseigner un code postal';
+            $error = 'Veuillez renseigner un code postal';
         }
         return $error;
     }
 
-    public function telephoneValid ($telephone, $empty = true)
+    public function telephoneValid($telephone)
     {
+        $error = '';
         if (!empty($telephone)) {
-            if ((!is_numeric($telephone)) OR (strlen($telephone)!=10)) {
+            if ((!is_numeric($telephone)) or (strlen($telephone) != 10)) {
                 $error = 'le numéro de téléphone n\'est pas correct';
             }
         } else {
-                $error = 'Veuillez renseigner un numéro de téléphone';
+            $error = 'Veuillez renseigner un numéro de téléphone';
         }
         return $error;
     }
