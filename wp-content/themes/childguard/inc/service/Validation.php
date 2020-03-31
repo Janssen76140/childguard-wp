@@ -24,8 +24,10 @@ class Validation
     {
         $error = '';
         if (empty($email) || (filter_var($email, FILTER_VALIDATE_EMAIL)) === false) {
-            $error = 'Adresse email invalide.';
-        } 
+            $error = 'Adresse mail invalide.';
+        } elseif (email_exists($email)) {
+            $error = 'L\'adresse mail existe déjà';
+        }
         return $error;
     }
 

@@ -25,7 +25,7 @@
                     <img class="logo-header" src="<?php echo get_template_directory_uri(); ?>/asset/img/logo.svg" alt="Logo">
                 </a>
                 <ul>
-                    <li><a href="<?php echo esc_url(home_url($web['pages']['Connexion']['slug'])); ?>" title="">Connexion</a></li>
+                    <li><a href="<?php echo esc_url(home_url($web['pages']['connexion']['slug'])); ?>" title="">Connexion</a></li>
                     <li><a class="lien-inscription" href="<?php echo esc_url(home_url($web['pages']['inscription']['slug'])); ?>" title="">S'inscrire</a></li>
 
                     <!-- <?php if (is_user_logged_in()) { ?>
