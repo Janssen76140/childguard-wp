@@ -53,9 +53,7 @@ class Validation
                 $error = 'Votre ' . $title . ' est trop court.';
             }
         } else {
-            if ($empty) {
                 $error = 'Veuillez renseigner ' . $title . '.';
-            }
         }
         return $error;
     }
@@ -70,9 +68,7 @@ class Validation
                 $error = 'Le mot de passe doit contenir minimum 6 caractères';
             }
         } else {
-            if ($empty) {
                 $error = 'Veuillez renseigner un mot de passe';
-            }
         }
         return $error;
     }
@@ -86,9 +82,8 @@ class Validation
                 $error = 'le SIRET ne doit contenir que des chiffres';
             } 
         } else {
-            if ($empty) {
                 $error = 'Veuillez renseigner un numéro de SIRET';
-            }
+            
         }
         return $error;
     }
@@ -100,9 +95,7 @@ class Validation
                 $error = 'le code postal n\'est pas correct';
             }
         } else {
-            if ($empty) {
                 $error = 'Veuillez renseigner un code postal';
-            }
         }
         return $error;
     }
@@ -114,9 +107,7 @@ class Validation
                 $error = 'le numéro de téléphone n\'est pas correct';
             }
         } else {
-            if ($empty) {
                 $error = 'Veuillez renseigner un numéro de téléphone';
-            }
         }
         return $error;
     }
