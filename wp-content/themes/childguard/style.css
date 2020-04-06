@@ -204,8 +204,8 @@ body {
 }
 
 .background-img-bgpro {
-  height: 500px;
-  background-image: url("asset/img/bg-pro.jpg");
+  height: 350px;
+  background-image: url("asset/img/bg-pro.png");
   background-size: cover;
   position: relative;
 }
@@ -276,4 +276,14 @@ h2 {
 
 #commentNousRejoindre a:hover {
     background-color: rgb(84, 174, 0);
+}
+
+.formulaireInscription input{
+width: 100%;
+}
+
+.formulaireInscription .error {
+  color: red;
+  display: block;
+  margin-bottom: 20px;
 }

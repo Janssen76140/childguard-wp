@@ -1,1 +1,1 @@
-<?php /* Template Name: Facture */
+<?php /* Template Name: facture */
