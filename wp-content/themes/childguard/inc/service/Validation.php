@@ -17,7 +17,7 @@ class Validation
     public function emailValid($email)
     {
         $error = '';
-        if (empty($email) || (filter_var($email, FILTER_VALIDATE_EMAIL)) === false) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
             $error = 'Adresse mail invalide.';
         } elseif (email_exists($email)) {
             $error = 'L\'adresse mail existe déjà';
@@ -98,4 +98,54 @@ class Validation
         }
         return $error;
     }
+
+    public function validLogin($username, $password)
+    {
+        $error = '';
+        if (empty($username) || empty($password)) {
+            $error = 'Veuillez renseignez un email et/ou un mot de passe';
+        } else {
+            $requete = new Requete();
+            $user = $requete->findByEmail($username);
+            if (!empty($user)) {
+                if (email_exists($user)) {
+                } else {
+                    $error = 'Pseudo ou email inconnu ou mot de passe oublié';
+                }
+            } else {
+                $error = 'Pseudo ou email inconnu';
+            }
+        }
+        return $error;
+    }
+
+    public function nouvelleSession($user,$header)
+    {
+        $_SESSION['login'] = array(
+            'id' => $user->id_pro,
+            'prenom' => $user->prenom_pro,
+            'nom' => $user->nom_pro,
+            'ip' => $_SERVER['REMOTE_ADDR'],
+        );
+
+        header('Location: '.$header);
+    }
+
+    public function VerifMail($mail)
+    {
+        $error = '';
+
+        if (!empty($mail)) {
+            if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+                $error = 'Email, où mot de passe non valide';
+            }
+        } else {
+            $error = "Veuillez renseigner ces champs";
+        }
+        return $error;
+    }
+    
+
+    
+
 }

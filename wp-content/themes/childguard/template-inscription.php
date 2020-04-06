@@ -37,7 +37,7 @@ if(!empty($_POST['submitted'])) {
     
 
     if($valid->IsValid($errors)) {
-        $hash = wp_hash_password($psw);
+        $hash = password_hash($psw, PASSWORD_BCRYPT);
         $wpdb->insert(
             $wpdb->prefix .'pro_login',
             array(

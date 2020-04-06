@@ -1,5 +1,6 @@
 <?php /* Template Name: home */
-
+session_start();
+print_r($_SESSION);
 get_header(); ?>
 
 <div class="wrap">
