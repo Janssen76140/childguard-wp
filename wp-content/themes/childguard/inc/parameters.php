@@ -6,9 +6,9 @@ $web = array(
             'id' => 6,
             'slug'  => '/',
         ),
-        'tableau de bord' => array(
+        'mes infos' => array(
             'id' => 10,
-            'slug'  => 'tableau-de-bord',
+            'slug'  => 'mes-infos',
         ),
         'facture' => array(
             'id' => 12,
@@ -25,6 +25,10 @@ $web = array(
         'contact' => array(
             'id' => 14,
             'slug'  => 'contact',
+        ),
+        'deconnexion' => array(
+            'id' => 37,
+            'slug'  => 'deconnexion',
         ),
     )
 );

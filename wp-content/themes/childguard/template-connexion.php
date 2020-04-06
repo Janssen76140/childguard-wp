@@ -16,7 +16,6 @@ if(!empty($_POST['submitted'])) {
         $user = $wpdb->get_row( $wpdb->prepare("SELECT * FROM {$wpdb->prefix}pro_login WHERE email_pro = '%s'", $email));
         if (!empty($user)) {
             if(password_verify($psw, $user->password_pro)) { 
-                die('ok');
                 $valid->nouvelleSession($user,'/childguard-wp/');
             } else {
                 return $error = 'L\'email ou le mot de passe ne sont pas valide';
