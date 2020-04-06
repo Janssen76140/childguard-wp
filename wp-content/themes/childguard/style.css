@@ -1,0 +1,289 @@
+/*!
+Theme Name: childguard
+Theme URI: 
+Author: samajame
+Author URI: 
+Description: 
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: childguard
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* clear */
+.clear:before,
+.clear:after {
+  content: " ";
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+.clear {
+  *zoom: 1;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+body {
+  max-width: 2000px;
+  background-color: #ffffff;
+  font-family: "Bellota Text", serif;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.wrap {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-top: 20px;
+}
+
+.page-header .logo-header {
+  margin-bottom: 15px;
+  height: 100px;
+  width: 100px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav ul li {
+  margin-right: 50px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav ul li .lien-inscription {
+  border: solid 0.1em black;
+  padding: 5px;
+}
+
+.background-img-bgpro {
+  height: 350px;
+  background-image: url("asset/img/bg-pro.png");
+  background-size: cover;
+  position: relative;
+}
+
+.background-img-bgpro h2 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 5.5vw;
+  margin: 10% 0 0 55%;
+  position: absolute;
+}
+
+h2 {
+  margin-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5vw;
+}
+
+#rejoignezNous p {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#commentNousRejoindre h2 {
+  margin-top: 80px;
+}
+
+#commentNousRejoindre img {
+  width: 100px;
+  height: 100px;
+}
+
+.ex1 {
+  float: left;
+  width: 25%;
+  margin-top: 20px;
+}
+.ex1 h3 {
+  font-size: 1.5vw;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.ex1 img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#commentNousRejoindre .bouttonInscrivezVous {
+    text-align: center;
+}
+
+#commentNousRejoindre a {
+  width: 30%;
+  background-color: #76CE51;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+  cursor: pointer;
+  margin-bottom: 80px;
+}
+
+#commentNousRejoindre a:hover {
+    background-color: rgb(84, 174, 0);
+}
+
+.formulaireInscription input{
+width: 100%;
+}
+
+.formulaireInscription .error {
+  color: red;
+  display: block;
+  margin-bottom: 20px;
+}
