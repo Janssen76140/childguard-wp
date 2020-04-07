@@ -287,3 +287,7 @@ width: 100%;
   display: block;
   margin-bottom: 20px;
 }
+
+.formulaireMesInfos input {
+  width: 100%;
+}

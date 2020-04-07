@@ -64,6 +64,8 @@ add_action( 'widgets_init', 'childguard_widgets_init' );
 function childguard_scripts() {
 	wp_enqueue_style( 'childguard-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'childguard-main', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'childguard-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'childguard-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
