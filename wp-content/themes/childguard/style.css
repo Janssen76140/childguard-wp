@@ -289,5 +289,26 @@ width: 100%;
 }
 
 .formulaireMesInfos input {
-  width: 100%;
+  width: 70%;
+}
+
+.formulaireMesInfos label {
+display: block;
+}
+
+.formulaireMesInfos textarea {
+  max-width: 70%;
+  min-width: 70%;
+}
+
+.formulaireMesInfos .add,.add2 {
+  color: #76CE51;
+  border: solid 0.01em #76CE51;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.formulaireMesInfos .remove {
+  color: red;
+  cursor: pointer;
 }

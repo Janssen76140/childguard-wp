@@ -45,15 +45,20 @@ get_header(); ?>
     <?= $form->input('ageEnfant_pro', 'text', '1 à 6 ans'); ?>
     <?= $form->error('ageEnfant_pro'); ?>
 
-    <?= $form->label('horaire_pro', 'Horaire d\'ouverture'); ?>
-    <?= $form->input('horaire_pro', 'text', 'Lundi au vendredi 8h 19h ; Samedi et dimanche fermé'); ?>
-    <?= $form->error('horaire_pro'); ?>
+    <div class="container2">
+    <div class="horraire" id="div_1">
+    <?= $form->label('horraire_pro_', 'Horaire d\'ouverture'); ?>
+    <?= $form->input('horraire_pro_', 'text', 'Lundi au vendredi 8h 19h'); ?>&nbsp;<span class='add2'>Ajouter</span>
+    <?= $form->error('horraire_pro_'); ?>
+    </div>
+    </div>
 
-    <p><a href="#" id="addScnt">Add Another Input Box</a></p>
-    <div class="lesPlusClass">
-    <?= $form->label('lesPlus_pro', 'Les +'); ?>
-    <?= $form->input('lesPlus_pro', 'text', 'Couches fournis ; Local poussette ; Repas(circuit court)'); ?>
-    <?= $form->error('lesPlus_pro'); ?>
+    <div class="container">
+    <div class="lesPlus" id="div_1">
+    <?= $form->label('lesPlus_pro_', 'Les +'); ?>
+    <?= $form->input('lesPlus_pro_', 'text', 'Couches fournis')?>&nbsp;<span class='add'>Ajouter</span>
+    <?= $form->error('lesPlus_pro_'); ?>
+    </div>
     </div>
 
     <?= $form->label('enQuelquesMots_pro', 'Décrivez votre structure d\'accueil'); ?>
