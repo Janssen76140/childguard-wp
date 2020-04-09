@@ -30,7 +30,9 @@ if(!empty($_POST['submitted'])) {
 
 $form = new Form($errors);
 get_header(); ?>
-<h4>Connexion</h4>
+
+<div class="wrap">
+<h2>Connexion</h2>
 <form action="" method="post" class="formulaireConnexion">
     <?= $form->label('email_pro', 'Email'); ?>
     <?= $form->input('email_pro', 'email', 'johndoe@johndoe.fr'); ?>
@@ -42,5 +44,6 @@ get_header(); ?>
 
     <?= $form->submit('submitted', 'Envoyer'); ?>
 </form>
+</div>
 
 <?php get_footer();

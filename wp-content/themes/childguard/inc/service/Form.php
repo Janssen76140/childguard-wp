@@ -40,9 +40,9 @@ class Form
      * @param $name
      * @return string
      */
-    public function textarea($name)
+    public function textarea($name, $placeholder)
     {
-        return '<textarea name="' . $name . '" id="' . $name . '">' . $this->getValue($name) . '</textarea>';
+        return '<textarea name="' . $name . '" id="' . $name . '" placeholder="'.$placeholder.'">' . $this->getValue($name) . '</textarea>';
     }
 
     /**
