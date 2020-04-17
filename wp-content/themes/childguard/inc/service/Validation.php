@@ -119,7 +119,7 @@ class Validation
         return $error;
     }
 
-    public function nouvelleSession($user,$header)
+    public function nouvelleSession($user, $header)
     {
         $_SESSION['login'] = array(
             'id' => $user->id_pro,
@@ -128,7 +128,11 @@ class Validation
             'ip' => $_SERVER['REMOTE_ADDR'],
         );
 
-        header('Location: '.$header);
+        $_SESSION['mesInfos'] = array(
+            'nomStructure_pro' => $user->nomStructure_pro,
+        );
+
+        header('Location: ' . $header);
     }
 
     public function VerifMail($mail)
@@ -144,8 +148,4 @@ class Validation
         }
         return $error;
     }
-    
-
-    
-
 }
