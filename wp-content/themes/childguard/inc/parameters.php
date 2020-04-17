@@ -30,5 +30,9 @@ $web = array(
             'id' => 37,
             'slug'  => 'deconnexion',
         ),
+        'detail' => array(
+            'id' => 43,
+            'slug'  => 'detail',
+        ),
     )
 );
