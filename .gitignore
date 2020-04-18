@@ -197,3 +197,7 @@ wp-content/themes/mynursery/inc/parameters.php
 vendor
 composer.json
 composer.lock
+
+# Ignorez cuztom
+
+wp-content/themes/childguard/api
