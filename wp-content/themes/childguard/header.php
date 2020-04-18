@@ -30,8 +30,6 @@
                     <?php if (is_user_logged_in()) { ?>
                         <li class="active"><a href="<?php echo esc_url(home_url('/')) ?>" title="">Accueil</a></li>
                         <li><a href="<?php echo esc_url(home_url($web['pages']['mes infos']['slug'])); ?>" title="">Mes infos</a></li>
-                        <li><a href="<?php echo esc_url(home_url($web['pages']['facture']['slug'])); ?>" title="">Facture</a></li>
-                        <li><a href="<?php echo esc_url(home_url($web['pages']['contact']['slug'])); ?>" title="">Contact</a></li>
                         <li><a href="<?php echo esc_url(home_url($web['pages']['deconnexion']['slug'])); ?>" title="">Deconnexion</a></li>
                     <?php } else { ?>
                         <li><a href="<?php echo esc_url(home_url($web['pages']['connexion']['slug'])); ?>" title="">Connexion</a></li>

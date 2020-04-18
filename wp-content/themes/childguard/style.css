@@ -408,10 +408,6 @@ form .lienPageDetail {
 }
 
 #pageDetail .phoneDetail {
-  margin-top: 10px;
-}
-
-#pageDetail .mailDetail {
   margin: 10px 0 80px 0;
 }
 
@@ -423,9 +419,6 @@ form .lienPageDetail {
   display: inline-block;
 }
 
-#pageDetail .mailDetail p {
-  display: inline-block;
-}
 
 #pageDetail .carreDetail img {
   height: 70px;

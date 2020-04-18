@@ -28,26 +28,6 @@ class Form
         }
     }
 
-    /**
-     * @param $name string
-     * @return string
-     */
-    private function getValue2($name)
-    {
-        $id = ($_SESSION['login']['id']);
-        global $wpdb;
-        $creches = $wpdb->get_results(
-            $wpdb->prepare("SELECT * FROM {$wpdb->prefix}pro_login WHERE id_pro = %d", $id)
-        );
-
-        if (!empty($creches[0]->$name)) {
-            return stripslashes($creches[0]->$name);
-        } elseif (!empty($_POST[$name])) {
-            return $_POST[$name];
-        } else {
-            return '';
-        }
-    }
 
     /**
      * @param $name string
@@ -58,14 +38,7 @@ class Form
         return '<input type="' . $type . '" name="' . $name . '" id="' . $name . '"placeholder="' . $placeholder . '" value="' . $this->getValue($name) . '">';
     }
 
-    /**
-     * @param $name string
-     * @return string
-     */
-    public function input2($name, $type, $placeholder)
-    {
-        return '<input type="' . $type . '" name="' . $name . '" id="' . $name . '"placeholder="' . $placeholder . '" value="' . $this->getValue2($name) . '">';
-    }
+
 
     /**
      * @param $name
@@ -75,14 +48,7 @@ class Form
     {
         return '<textarea name="' . $name . '" id="' . $name . '" placeholder="' . $placeholder . '">' . $this->getValue($name) . '</textarea>';
     }
-    /**
-     * @param $name
-     * @return string
-     */
-    public function textarea2($name, $placeholder)
-    {
-        return '<textarea name="' . $name . '" id="' . $name . '" placeholder="' . $placeholder . '">' . $this->getValue2($name) . '</textarea>';
-    }
+
 
     /**
      * @param $name string
