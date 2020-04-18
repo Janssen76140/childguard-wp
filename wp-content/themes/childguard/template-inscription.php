@@ -5,57 +5,20 @@ $success = false;
 if (!empty($_POST['submitted'])) {
 
     // faille xss
-    $nom                        = trim(strip_tags($_POST['nom_pro']));
-    $prenom                     = trim(strip_tags($_POST['prenom_pro']));
+
+    $prenom                     = trim(strip_tags($_POST['idConnexion_pro']));
     $email                      = trim(strip_tags($_POST['email_pro']));
     $psw                        = trim(strip_tags($_POST['password_pro']));
-    $confpsw                    = trim(strip_tags($_POST['password2_pro']));
-    $nomSociete                 = trim(strip_tags($_POST['nomSociete_pro']));
-    $raisonSocial               = trim(strip_tags($_POST['raisonSociale_pro']));
-    $siret                      = trim(strip_tags($_POST['siret_pro']));
-    $adresse                    = trim(strip_tags($_POST['adresse_pro']));
-    $codePostal                 = trim(strip_tags($_POST['codePostal_pro']));
-    $ville                      = trim(strip_tags($_POST['ville_pro']));
-    $telephone                  = trim(strip_tags($_POST['telephone_pro']));
 
     // validation
     $valid = new Validation();
-    $errors['nom_pro']          = $valid->textValid($nom, 'votre nom', 1, 50);
-    $errors['prenom_pro']       = $valid->textValid($prenom, 'votre prénom', 1, 50);
-    $errors['email_pro']        = $valid->emailValid($email);
-    $errors['password_pro']     = $valid->validMdp($psw, $confpsw);
-    $errors['nomSociete_pro']   = $valid->textValid($nomSociete, 'le nom de votre société', 3, 50);
-    $errors['raisonSociale_pro'] = $valid->textValid($raisonSocial, 'la raison sociale de votre société', 1, 30);
-    $errors['siret_pro']        = $valid->validSiret($siret);
-    $errors['adresse_pro']      = $valid->textValid($adresse, 'votre adresse', 3, 150);
-    $errors['codePostal_pro']   = $valid->codePostalValid($codePostal);
-    $errors['ville_pro']        = $valid->textValid($ville, 'votre ville', 1, 50);
-    $errors['telephone_pro']    = $valid->telephoneValid($telephone);
 
-
+    $errors['idConnexion_pro']       = $valid->textValid($prenom, 'votre identification de connexion', 1, 50);
+    $errors['email_pro']             = $valid->emailValid($email);
+    $errors['password_pro']          = $valid->validMdp($psw);
 
     if ($valid->IsValid($errors)) {
-        $hash = password_hash($psw, PASSWORD_BCRYPT);
-        $wpdb->insert(
-            $wpdb->prefix . 'pro_login',
-            array(
-                'nom_pro'           => $nom,
-                'prenom_pro'        => $prenom,
-                'email_pro'         => $email,
-                'password_pro'      => $hash,
-                'nomSociete_pro'    => $nomSociete,
-                'raisonSociale_pro' => $raisonSocial,
-                'siret_pro'         => $siret,
-                'adresse_pro'       => $adresse,
-                'codePostal_pro'    => $codePostal,
-                'ville_pro'         => $ville,
-                'telephone_pro'     => $telephone,
-                'created_at'        => current_time('mysql')
-            ),
-            array(
-                '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'
-            )
-        );
+        wp_create_user($prenom, $psw, $email);
         $success = true;
     }
 }
@@ -69,14 +32,11 @@ get_header(); ?>
 <?php } else { ?>
 
     <div class="wrap">
-        <form action="" method="post" class="formulaireInscription">
-            <?= $form->label('nom_pro', 'Nom'); ?>
-            <?= $form->input('nom_pro', 'text', 'Doe'); ?>
-            <?= $form->error('nom_pro'); ?>
+        <form action="/childguard-wp/inscription" method="post" class="formulaireInscription">
 
-            <?= $form->label('prenom_pro', 'Prénom'); ?>
-            <?= $form->input('prenom_pro', 'text', 'John'); ?>
-            <?= $form->error('prenom_pro'); ?>
+            <?= $form->label('idConnexion_pro', 'Identifiant de connexion'); ?>
+            <?= $form->input('idConnexion_pro', 'text', 'John76140'); ?>
+            <?= $form->error('idConnexion_pro'); ?>
 
             <?= $form->label('email_pro', 'Email'); ?>
             <?= $form->input('email_pro', 'email', 'johndoe@johndoe.fr'); ?>
@@ -85,38 +45,6 @@ get_header(); ?>
             <?= $form->label('password_pro', 'Mot de passe'); ?>
             <?= $form->input('password_pro', 'password', ''); ?>
             <?= $form->error('password_pro'); ?>
-
-            <?= $form->label('password2_pro', 'Confirmez votre mot de passe'); ?>
-            <?= $form->input('password2_pro', 'password', ''); ?>
-            <?= $form->error('password2_pro'); ?>
-
-            <?= $form->label('nomSociete_pro', 'Nom de votre société'); ?>
-            <?= $form->input('nomSociete_pro', 'text', 'Samajame WEB'); ?>
-            <?= $form->error('nomSociete_pro'); ?>
-
-            <?= $form->label('raisonSociale_pro', 'Raison sociale de la société'); ?>
-            <?= $form->input('raisonSociale_pro', 'text', 'SARL'); ?>
-            <?= $form->error('raisonSociale_pro'); ?>
-
-            <?= $form->label('siret_pro', 'N°SIRET'); ?>
-            <?= $form->input('siret_pro', 'number', '48310409700017'); ?>
-            <?= $form->error('siret_pro'); ?>
-
-            <?= $form->label('adresse_pro', 'Adresse'); ?>
-            <?= $form->input('adresse_pro', 'text', '24 Place Saint Marc'); ?>
-            <?= $form->error('adresse_pro'); ?>
-
-            <?= $form->label('codePostal_pro', 'Code postale'); ?>
-            <?= $form->input('codePostal_pro', 'number', '76000'); ?>
-            <?= $form->error('codePostal_pro'); ?>
-
-            <?= $form->label('ville_pro', 'Ville'); ?>
-            <?= $form->input('ville_pro', 'text', 'Rouen'); ?>
-            <?= $form->error('ville_pro'); ?>
-
-            <?= $form->label('telephone_pro', 'Téléphone'); ?>
-            <?= $form->input('telephone_pro', 'number', '0232526272'); ?>
-            <?= $form->error('telephone_pro'); ?>
 
             <?= $form->submit('submitted', 'Envoyer'); ?>
 

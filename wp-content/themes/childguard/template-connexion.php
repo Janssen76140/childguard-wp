@@ -1,48 +1,41 @@
 <?php /* Template Name: connexion */
-session_start();
-global $wpdb;
-$errors = array();
-$success = false;
-$valid = new Validation();
 
-if (!empty($_POST['submitted'])) {
-    // faille xss
-    $email = trim(strip_tags($_POST['email_pro']));
-    $psw = trim(strip_tags($_POST['password_pro']));
-
-    $errors['email_pro']   = $valid->VerifMail($email);
-
-    if ($valid->IsValid($errors)) {
-        $user = $wpdb->get_row($wpdb->prepare("SELECT * FROM {$wpdb->prefix}pro_login WHERE email_pro = '%s'", $email));
-        if (!empty($user)) {
-            if (password_verify($psw, $user->password_pro)) {
-                $valid->nouvelleSession($user, '/childguard-wp/');
-            } else {
-                return $error = 'L\'email ou le mot de passe ne sont pas valide';
-            }
-        } else {
-            return $error = "L\'email ou le mot de passe ne sont pas valide";
-        }
+$error = false;
+if(!empty($_POST['submitconnexion'])) {
+    $user = wp_signon($_POST);
+    if(is_wp_error($user)) {
+        $error = $user->get_error_message();
+    }else {
+        wp_redirect( home_url('/') ); exit;
     }
 }
 
-
-$form = new Form($errors);
 get_header(); ?>
+    <div id="primary" class="content-area">
+        <div id="main" class="wrap">
 
-<div class="wrap">
-    <h2>Connexion</h2>
-    <form action="" method="post" class="formulaireConnexion">
-        <?= $form->label('email_pro', 'Email'); ?>
-        <?= $form->input('email_pro', 'email', 'johndoe@johndoe.fr'); ?>
-        <?= $form->error('email_pro'); ?>
+            <h1>Connexion</h1>
+            <?php if($error): ?>
+                <div class="error">
+                    <?php echo $error ?>
+                </div>
+            <?php endif ?>
+            <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+                <label for="user_login">Votre email*</label>
+                <input type="text" name="user_login" id="user_login" value="<?php if(!empty($_POST['user_login'])) {echo $_POST['user_login'];} ?>"/></br>
 
-        <?= $form->label('password_pro', 'Mot de passe'); ?>
-        <?= $form->input('password_pro', 'password', ''); ?>
-        <?= $form->error('password_pro'); ?>
+                <label for="user_password">Votre mot de passe*</label>
+                <input type="password" name="user_password" id="user_password" /></br>
+                <span class="champs">*Champs obligatoires</span></br>
+                <input type="checkbox" name="remember" id="" value="1">
+                <label for="remember">Se souvenir de moi</label></br>
 
-        <?= $form->submit('submitted', 'Envoyer'); ?>
-    </form>
-</div>
+                <input type="submit" value="se connecter" name="submitconnexion" >
+            </form>
+            <p><a href="<?php echo bloginfo('url'); ?>/register">S'inscrire</a></p>
+            <p><a href="<?php echo wp_lostpassword_url( get_bloginfo('url') ); ?>" title="Lost Password">Mot de passe perdu</a></p>
 
+        </div><!-- #main -->
+        <div class="clear"></div>
+    </div><!-- #primary -->
 <?php get_footer();
