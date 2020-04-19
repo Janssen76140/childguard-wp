@@ -10,3 +10,6 @@ require get_template_directory() . '/inc/extra/template-functions.php';
 require get_template_directory() . '/inc/service/Form.php';
 require get_template_directory() . '/inc/service/Validation.php';
 require get_template_directory() . '/inc/service/Requete.php';
+
+require get_template_directory() . '/api/cuztom-2.9/cuztom.php';
+require get_template_directory() . '/inc/cuztom/init-user.php';

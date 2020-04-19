@@ -42,13 +42,11 @@ class Validation
         return $error;
     }
 
-    public function validMdp($password1, $password2)
+    public function validMdp($password1)
     {
         $error = '';
         if (!empty($password1)) {
-            if ($password1 != $password2) {
-                $error = 'Vos mots de passe doivent être identiques';
-            } elseif (mb_strlen($password1) <= 5) {
+            if (mb_strlen($password1) <= 5) {
                 $error = 'Le mot de passe doit contenir minimum 6 caractères';
             }
         } else {

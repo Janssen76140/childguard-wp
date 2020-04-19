@@ -5,8 +5,9 @@ Template Name: deconnexion
 
 session_start();
 
-$_SESSION = array();
+$url = '/childguard-wp/';
 
-session_destroy();
+wp_logout();
 
-header('Location: /childguard-wp/');
+wp_redirect( $url );
+exit;
