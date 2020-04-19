@@ -42,13 +42,11 @@ class Validation
         return $error;
     }
 
-    public function validMdp($password1, $password2)
+    public function validMdp($password1)
     {
         $error = '';
         if (!empty($password1)) {
-            if ($password1 != $password2) {
-                $error = 'Vos mots de passe doivent être identiques';
-            } elseif (mb_strlen($password1) <= 5) {
+            if (mb_strlen($password1) <= 5) {
                 $error = 'Le mot de passe doit contenir minimum 6 caractères';
             }
         } else {
@@ -119,7 +117,7 @@ class Validation
         return $error;
     }
 
-    public function nouvelleSession($user,$header)
+    public function nouvelleSession($user, $header)
     {
         $_SESSION['login'] = array(
             'id' => $user->id_pro,
@@ -128,7 +126,11 @@ class Validation
             'ip' => $_SERVER['REMOTE_ADDR'],
         );
 
-        header('Location: '.$header);
+        $_SESSION['mesInfos'] = array(
+            'nomStructure_pro' => $user->nomStructure_pro,
+        );
+
+        header('Location: ' . $header);
     }
 
     public function VerifMail($mail)
@@ -144,8 +146,4 @@ class Validation
         }
         return $error;
     }
-    
-
-    
-
 }

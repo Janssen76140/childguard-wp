@@ -20,12 +20,14 @@ class Form
      */
     private function getValue($name)
     {
+
         if (!empty($_POST[$name])) {
             return $_POST[$name];
         } else {
             return '';
         }
     }
+
 
     /**
      * @param $name string
@@ -36,14 +38,17 @@ class Form
         return '<input type="' . $type . '" name="' . $name . '" id="' . $name . '"placeholder="' . $placeholder . '" value="' . $this->getValue($name) . '">';
     }
 
+
+
     /**
      * @param $name
      * @return string
      */
-    public function textarea($name)
+    public function textarea($name, $placeholder)
     {
-        return '<textarea name="' . $name . '" id="' . $name . '">' . $this->getValue($name) . '</textarea>';
+        return '<textarea name="' . $name . '" id="' . $name . '" placeholder="' . $placeholder . '">' . $this->getValue($name) . '</textarea>';
     }
+
 
     /**
      * @param $name string
@@ -76,5 +81,4 @@ class Form
     {
         return '<label for="' . $name . '">' . ucfirst($label) . '</label>';
     }
-
 }

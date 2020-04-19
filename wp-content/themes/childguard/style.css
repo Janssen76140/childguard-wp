@@ -11,6 +11,10 @@ Text Domain: childguard
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------RESET------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+
 html,
 body,
 div,
@@ -156,6 +160,10 @@ table {
   box-sizing: border-box; /* Opera/IE 8+ */
 }
 
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------GENERAL------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+
 body {
   max-width: 2000px;
   background-color: #ffffff;
@@ -168,6 +176,18 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5vw;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------HEADER------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
 
 .page-header {
   margin-top: 20px;
@@ -203,6 +223,10 @@ body {
   padding: 5px;
 }
 
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------PAGE HOME------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+
 .background-img-bgpro {
   height: 350px;
   background-image: url("asset/img/bg-pro.png");
@@ -216,13 +240,6 @@ body {
   font-size: 5.5vw;
   margin: 10% 0 0 55%;
   position: absolute;
-}
-
-h2 {
-  margin-top: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2.5vw;
 }
 
 #rejoignezNous p {
@@ -257,12 +274,12 @@ h2 {
 }
 
 #commentNousRejoindre .bouttonInscrivezVous {
-    text-align: center;
+  text-align: center;
 }
 
 #commentNousRejoindre a {
   width: 30%;
-  background-color: #76CE51;
+  background-color: #76ce51;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -275,15 +292,230 @@ h2 {
 }
 
 #commentNousRejoindre a:hover {
-    background-color: rgb(84, 174, 0);
+  background-color: rgb(84, 174, 0);
 }
 
-.formulaireInscription input{
-width: 100%;
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------FORMULAIRE GENERALE------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+label {
+  margin: 0 15px 0 15px;
 }
 
-.formulaireInscription .error {
+input {
+  text-decoration: none;
+  border: none;
+  border-bottom: 1px solid #78a0ff;
+  border-left: 1px solid #78a0ff;
+  width: 100%;
+  height: 30px;
+  margin: 0 15px 30px 15px;
+  padding-left: 10px;
+}
+
+input:hover {
+  border-bottom: 1px solid #76ce51;
+  border-left: 1px solid #76ce51;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  margin-top: 40px;
+  height: 40px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #78a0ff;
+  width: 20%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+input[type="submit"]:hover {
+  background-color: #76ce51;
+}
+
+textarea {
+  border: none;
+  border-bottom: 1px solid #78a0ff;
+  border-left: 1px solid #78a0ff;
+  margin: 0 15px 0 15px;
+  padding-left: 10px;
+  min-height: 60px;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+textarea:hover {
+  border-bottom: 1px solid #76ce51;
+  border-left: 1px solid #76ce51;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.error {
   color: red;
   display: block;
+  margin-bottom: 40px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------PAGE INSCRIPTION------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------PAGE CONNEXION------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+
+.connexion .mdpOublie {
+text-align: center;
+margin-bottom: 80px;
+}
+
+.connexion .mdpOublie a {
+  color: black;
+  
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------PAGE MES INFOS------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+
+form .lienPageDetail {
+  text-align: center;
+  display: block;
+  margin-bottom: 50px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------PAGE MES INFOS------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+
+#pageDetail h4 {
+  font-size: 1.8vw;
+  margin: 50px 0 10px 0;
+}
+
+#pageDetail .iconeDetail {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#pageDetail .phoneDetail {
+  margin: 10px 0 80px 0;
+}
+
+#pageDetail .enteteDetail p {
+  display: inline-block;
+}
+
+#pageDetail .phoneDetail p {
+  display: inline-block;
+}
+
+
+#pageDetail .carreDetail img {
+  height: 70px;
+  width: 70px;
+}
+
+#pageDetail .carreDetail .ex2 {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+#pageDetail .carreDetail .ouvertureDetail {
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+}
+
+#pageDetail .carreDetail .surfaceDetail {
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+}
+
+#pageDetail .carreDetail .ageDetail {
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+}
+
+#pageDetail .carreDetail .capaciteDetail {
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+#pageDetail .carreDetail .ex2 img {
+  margin-top: 20px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#pageDetail .carreDetail .ex2 .enteteCarreDetail {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#pageDetail .carreDetail .ex2 .valueCarreDetail {
+  text-align: center;
+  margin-top: 15px;
   margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#pageDetail .horairesPlusDetail .ex3 {
+  margin-top: 50px;
+}
+
+#pageDetail .horairesPlusDetail .ex3 h5 {
+  font-size: 1.4vw;
+  margin-bottom: 10px;
+}
+
+#pageDetail .horairesPlusDetail .horairesDetail {
+  display: block;
+  float: left;
+  margin-left: 100px;
+}
+
+#pageDetail .horairesPlusDetail .plusDetail {
+  display: block;
+  float: right;
+  margin-right: 100px;
+}
+
+#pageDetail .enQuelquesMots h4 {
+  color: #fca1cd;
+  font-size: "Bellota", serif;
+  margin-bottom: 20px;
+}
+
+#pageDetail .enQuelquesMots p {
+  margin-bottom: 80px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------FOOTER------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------- */
+
+footer {
+  width: 100%;
+  padding: 20px 0 20px 0;
+  bottom: 0px;
+  color: black;
+  text-align: center;
+  border-top: solid 1px #fca1cd;
+}
+footer p {
+  margin-bottom: 10px;
 }
